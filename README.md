@@ -11,8 +11,13 @@ Run ```copy .env.example .env``` and after that update database credentials in `
 Execute commands as below:
 
 ```sh 
-./vendor/bin/sail php artisan migrate:fresh --seed
+composer install
+./vendor/bin/sail build --no-cache
 ./vendor/bin/sail up
+php artisan key:generate
+php artisan jwt:secret
+./vendor/bin/sail php artisan migrate:fresh --seed
+./vendor/bin/sail npm install
 ./vendor/bin/sail npm run dev
 ```
 
