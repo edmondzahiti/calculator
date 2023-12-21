@@ -1,4 +1,4 @@
-# Api Webshop
+# Calculator
 
 ## Installation
 
@@ -8,17 +8,27 @@ Clone the repo: ``` git clone https://github.com/edmondzahiti/calculator.git ```
 
 Run ```copy .env.example .env``` and after that update database credentials in ```.env``` file
 
-Execute commands as below:
+Open a terminal on your Ubuntu machine and Execute commands as below:
 
 ```sh 
 composer install
 ./vendor/bin/sail build --no-cache
 ./vendor/bin/sail up
+
+
+Open another command terminal:
+
 php artisan key:generate
 php artisan jwt:secret
-./vendor/bin/sail php artisan migrate:fresh --seed
+./vendor/bin/sail php artisan migrate --seed
 ./vendor/bin/sail npm install
 ./vendor/bin/sail npm run dev
+
+Once everything is set up, you can access the application by opening a web browser and navigating to: http://127.0.0.1/login
+
+Use the provided test user credentials to log in:
+email: test@example.com
+password: 123456
 ```
 
 
